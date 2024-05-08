@@ -27,28 +27,35 @@ document.addEventListener('DOMContentLoaded', function () {
         return; // countが100以上の場合は何もしない
       }
 
-      // 他の全ての音声を停止
-      audios.forEach((audio) => {
-        if (!audio.paused) {
-          audio.pause();
-          audio.currentTime = 0;
+      // Promiseを使用して全てのオーディオを停止
+      Promise.all(
+        audios.map((audio) => {
+          return new Promise((resolve) => {
+            if (!audio.paused) {
+              audio.onpause = resolve;
+              audio.pause();
+              audio.currentTime = 0;
+            } else {
+              resolve();
+            }
+          });
+        })
+      ).then(() => {
+        const audioNum = this.dataset.audioNum;
+        const audio = audios[audioNum - 1];
+
+        if (audio) {
+          audio.play(); // 新しい音声を再生
+        }
+
+        count++;
+        counter.textContent = count;
+        gauge.set(count); // ゲージの値を更新
+
+        if (count === 99) {
+          counter.style.color = 'red'; // カウンターを赤色に変更
         }
       });
-
-      const audioNum = this.dataset.audioNum;
-      const audio = audios[audioNum - 1];
-
-      if (audio) {
-        audio.play(); // 新しい音声を再生
-      }
-
-      count++;
-      counter.textContent = count;
-      gauge.set(count); // ゲージの値を更新
-
-      if (count === 99) {
-        counter.style.color = 'red'; // カウンターを赤色に変更
-      }
     });
   }
 
