@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script src="./dist/gauge.min.js"></script>
+  </head>
+  <body>
+    <section class="vote_sec">
+      <img src="./images/iOS の画像.gif" alt="" width="270" height="152" class="bg_image" />
+      <div class="inner">
+        <div class="vote_area">
+          <h1 id="counter">0</h1>
+          <canvas id="meter"></canvas>
+          <div class="btn_area">
+            <input type="button" value="応援する1" class="vote_btn" data-audio-num="1" />
+            <input type="button" value="応援する2" class="vote_btn" data-audio-num="2" />
+            <input type="button" value="応援する3" class="vote_btn" data-audio-num="3" />
+            <input type="button" value="応援する4" class="vote_btn" data-audio-num="4" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="se_area">
+      <audio id="btn_audio1">
+        <source src="./audio/stand up 立ち上がりーよ.mp3" type="audio/mp3" />
+      </audio>
+      <audio id="btn_audio2">
+        <source src="./audio/イナズマチャレンジャー.mp3" type="audio/mp3" />
+      </audio>
+      <audio id="btn_audio3">
+        <source src="./audio/和太鼓でドドン.mp3" type="audio/mp3" />
+      </audio>
+      <audio id="btn_audio4">
+        <source src="./audio/和太鼓でドドン.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
