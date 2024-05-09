@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   for (let i = 0; i < voteBtns.length; i++) {
     voteBtns[i].addEventListener('click', function () {
-      if (count >= 100) {
+      if (count >= 10) {
         return; // countが100以上の場合は何もしない
       }
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         counter.textContent = count;
         gauge.set(count); // ゲージの値を更新
 
-        if (count === 99) {
+        if (count === 10) {
           counter.style.color = 'red'; // カウンターを赤色に変更
         }
       });
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     var target = document.getElementById('meter');
     var gauge = new Gauge(target).setOptions(opts);
-    gauge.maxValue = 100;
+    gauge.maxValue = 10;
     gauge.animationSpeed = 32;
     return gauge;
   }

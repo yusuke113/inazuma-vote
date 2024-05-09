@@ -38,17 +38,28 @@ body {
   height: 100%;
   padding: 20px 10px;
 }
+.vote_sec .meter_area {
+  position: relative;
+  top: -100px;
+}
+.vote_sec #counter {
+  text-align: center;
+}
 .vote_sec .btn_area {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 .vote_sec .vote_btn {
   width: calc((100% - 5px) / 2);
   aspect-ratio: 1/1;
-  border-radius: 50%;
+  border-radius: 10%;
   background: #fff;
   display: flex;
   align-items: center;
