@@ -3,15 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>Document</title>
     <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
     <script src="./dist/gauge.min.js"></script>
   </head>
   <body>
     <section class="vote_sec">
-      <img src="./images/iOS の画像.gif" alt="" width="270" height="152" class="bg_image" />
+      <!-- <img src="./images/iOS の画像.gif" alt="" width="270" height="152" class="bg_image" /> -->
+      <img
+        src="./images/inazuma_1_1242x2208.png"
+        alt=""
+        width="1242"
+        height="2208"
+        class="bg_image"
+      />
       <div class="inner">
         <div class="vote_area">
           <div class="meter_area">
@@ -19,26 +35,44 @@
             <canvas id="meter"></canvas>
           </div>
           <div class="btn_area">
-            <input type="button" value="応援する1" class="vote_btn" data-audio-num="1" />
-            <input type="button" value="応援する2" class="vote_btn" data-audio-num="2" />
-            <input type="button" value="応援する3" class="vote_btn" data-audio-num="3" />
-            <input type="button" value="応援する4" class="vote_btn" data-audio-num="4" />
+            <a href="#" class="vote_btn" data-audio-num="1">応援する1</a>
+            <a href="#" class="vote_btn" data-audio-num="2">応援する2</a>
+            <a href="#" class="vote_btn" data-audio-num="3">応援する3</a>
+            <a href="#" class="vote_btn" data-audio-num="4">応援する4</a>
           </div>
         </div>
       </div>
     </section>
     <div class="se_area">
       <audio id="btn_audio1">
-        <source src="https://github.com/yusuke113/inazuma-vote/raw/main/audio/audio1.mp3" type="audio/mp3" />
+        <source
+          src="https://github.com/yusuke113/inazuma-vote/raw/main/audio/audio1.mp3"
+          type="audio/mp3"
+        />
       </audio>
       <audio id="btn_audio2">
-        <source src="https://github.com/yusuke113/inazuma-vote/raw/main/audio/audio2.mp3" type="audio/mp3" />
+        <source
+          src="https://github.com/yusuke113/inazuma-vote/raw/main/audio/audio2.mp3"
+          type="audio/mp3"
+        />
       </audio>
       <audio id="btn_audio3">
-        <source src="https://github.com/yusuke113/inazuma-vote/raw/main/audio/audio3.mp3" type="audio/mp3" />
+        <source
+          src="https://github.com/yusuke113/inazuma-vote/raw/main/audio/audio3.mp3"
+          type="audio/mp3"
+        />
       </audio>
       <audio id="btn_audio4">
-        <source src="https://github.com/yusuke113/inazuma-vote/raw/main/audio/audio4.mp3" type="audio/mp3" />
+        <source
+          src="https://github.com/yusuke113/inazuma-vote/raw/main/audio/audio4.mp3"
+          type="audio/mp3"
+        />
+      </audio>
+      <audio id="btn_audio_god">
+        <source
+          src="https://github.com/yusuke113/inazuma-vote/raw/main/audio/godhand.mp3"
+          type="audio/m4a"
+        />
       </audio>
     </div>
     <script src="./js/main.js"></script>

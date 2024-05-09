@@ -5,6 +5,7 @@ const audio1 = document.getElementById('btn_audio1');
 const audio2 = document.getElementById('btn_audio2');
 const audio3 = document.getElementById('btn_audio3');
 const audio4 = document.getElementById('btn_audio4');
+const audioGod = document.getElementById('btn_audio_god');
 const counter = document.getElementById('counter');
 var count = 0;
 
@@ -23,10 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   for (let i = 0; i < voteBtns.length; i++) {
     voteBtns[i].addEventListener('click', function () {
-      if (count >= 10) {
-        return; // countが100以上の場合は何もしない
-      }
-
       // Promiseを使用して全てのオーディオを停止
       Promise.all(
         audios.map((audio) => {
@@ -44,16 +41,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const audioNum = this.dataset.audioNum;
         const audio = audios[audioNum - 1];
 
+        if (count >= 10) {
+          audioGod.play();
+          return; // countが100以上の場合は何もしない
+        }
         if (audio) {
           audio.play(); // 新しい音声を再生
         }
-
         count++;
         counter.textContent = count;
         gauge.set(count); // ゲージの値を更新
 
         if (count === 10) {
           counter.style.color = 'red'; // カウンターを赤色に変更
+          audioGod.play();
         }
       });
     });
