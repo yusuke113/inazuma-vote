@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
   let count = parseInt(counter.textContent, 10);
 
   for (let i = 0; i < voteBtns.length; i++) {
-    voteBtns[i].addEventListener('click', function () {
+    voteBtns[i].addEventListener('click', function (e) {
+      e.preventDefault();
       // Promiseを使用して全てのオーディオを停止
       Promise.all(
         audios.map((audio) => {
@@ -43,18 +44,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (count >= 10) {
           audioGod.play();
-          return; // countが100以上の場合は何もしない
-        }
-        if (audio) {
-          audio.play(); // 新しい音声を再生
+          showGodHand();
+          return;
         }
         count++;
         counter.textContent = count;
         gauge.set(count); // ゲージの値を更新
-
         if (count === 10) {
+          showGodHand();
           counter.style.color = 'red'; // カウンターを赤色に変更
           audioGod.play();
+          return;
+        }
+        if (audio) {
+          audio.play(); // 新しい音声を再生
         }
       });
     });
@@ -69,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
         length: 0.9,
         strokeWidth: 0.035,
       },
-      colorStart: '#6FADCF',
-      colorStop: '#8FC0DA',
+      colorStart: '#004AAD',
+      colorStop: '#004AAD',
       strokeColor: '#E0E0E0',
     };
     var target = document.getElementById('meter');
@@ -78,5 +81,20 @@ document.addEventListener('DOMContentLoaded', function () {
     gauge.maxValue = 10;
     gauge.animationSpeed = 32;
     return gauge;
+  }
+
+  // 10回または10回以上ボタンを押したらgodhand_imgのhiddenを解除してgifを表示（8秒）
+  // 8秒後にgodhand_imgのhiddenを追加してgifを非表示にする
+  const godgif = document.getElementById('godgif');
+  const godgifImg = document.getElementById('godgif_img');
+
+  function showGodHand() {
+    // gitのsrcを正しいものに変更生のjs
+    godgifImg.setAttribute('src', './images/god-hand-inazuma-eleven.gif');
+    godgif.classList.remove('hidden');
+    setTimeout(() => {
+      godgifImg.setAttribute('src', './images/empty.gif');
+      godgif.classList.add('hidden');
+    }, 9000);
   }
 });

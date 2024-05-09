@@ -20,13 +20,7 @@
   </head>
   <body>
     <section class="vote_sec">
-      <img
-        src="./images/inazuma_1_1242x2208.png"
-        alt=""
-        width="1242"
-        height="2208"
-        class="bg_image"
-      />
+      <div class="bg_img"></div>
       <div class="inner">
         <div class="vote_area">
           <div class="meter_area">
@@ -34,20 +28,22 @@
               <br>
               <img src="./images/godhand.svg" alt="" class="godhand_img">
               が出るかも？</h1>
+              <p class="caveat">※音声が出ます</p>
             <h2 id="counter">0</h1>
             <canvas id="meter"></canvas>
           </div>
           <div class="btn_area">
-            <a href="#" class="vote_btn" data-audio-num="1">応援歌1</a>
-            <a href="#" class="vote_btn" data-audio-num="2">応援歌2</a>
-            <a href="#" class="vote_btn" data-audio-num="3">応援歌3</a>
-            <a href="#" class="vote_btn" data-audio-num="4">応援歌4</a>
+            <a href="#" class="vote_btn" data-audio-num="1">応援する1</a>
+            <a href="#" class="vote_btn" data-audio-num="2">応援する2</a>
+            <a href="#" class="vote_btn" data-audio-num="3">応援する3</a>
+            <a href="#" class="vote_btn" data-audio-num="4">応援する4</a>
           </div>
         </div>
       </div>
     </section>
-    <div class="godgif">
-      <img src="./images/god-hand-inazuma-eleven.gif" alt="">
+    <div id="godgif" class="hidden">
+      <!-- <img src="./images/god-hand-inazuma-eleven.gif" alt=""> -->
+      <img src="./images/empty.gif" alt="" id="godgif_img">
     </div>
     <div class="se_area">
       <audio id="btn_audio1">
@@ -77,7 +73,7 @@
       <audio id="btn_audio_god">
         <source
           src="https://github.com/yusuke113/inazuma-vote/raw/main/audio/godhand.mp3"
-          type="audio/m4a"
+          type="audio/mp3"
         />
       </audio>
     </div>

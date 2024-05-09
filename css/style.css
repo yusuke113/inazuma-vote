@@ -1,6 +1,8 @@
 body {
   height: 100vh;
   max-height: 100vh;
+  touch-action: pan-x pan-y;
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 a {
@@ -10,24 +12,26 @@ a {
 .vote_sec {
   height: 100%;
 }
-.vote_sec .bg_image {
+.vote_sec .bg_img {
+  opacity: 0.6;
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1242/2208;
   z-index: -1;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  opacity: 0.5;
+  width: 100%;
+  height: 100lvh;
+  background-image: url("../images/inazuma_1_1242x2208.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .vote_sec h1 {
   text-align: center;
-  position: relative;
-  top: -40px;
+  font-size: 6vw;
 }
 .vote_sec .godhand_img {
-  width: 80%;
+  width: 64%;
   margin: 0 auto;
+}
+.vote_sec .caveat {
+  font-size: 14px;
 }
 .vote_sec .inner {
   position: relative;
@@ -37,39 +41,35 @@ a {
   max-width: 500px;
   height: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 50px 10px 0 10px;
 }
 .vote_sec .vote_area {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  padding: 20px 10px;
 }
 .vote_sec .meter_area {
-  position: relative;
-  top: -160px;
   text-align: center;
 }
 .vote_sec #counter {
+  margin-top: 30px;
   text-align: center;
+  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff;
+}
+.vote_sec #meter {
+  width: 270px;
+  height: unset;
 }
 .vote_sec .btn_area {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 100%;
-  padding: 50px 5px 0 5px;
+  margin: auto 0 10px;
+  padding: 10px;
 }
 .vote_sec .vote_btn {
   width: calc((100% - 5px) / 2);
@@ -89,26 +89,32 @@ a {
   background: yellow;
 }
 .vote_sec .vote_btn::after {
-  content: "\f001";
-  margin-left: 2px;
+  content: "\f028";
+  margin-left: 3px;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 1em;
   color: #333;
 }
 
-.godgif {
+#godgif {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.godgif img {
+#godgif img {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.hidden {
+  display: none;
 }
 
 .score-wrap {
