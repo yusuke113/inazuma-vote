@@ -11,13 +11,22 @@ a {
 }
 .vote_sec .bg_image {
   position: absolute;
-  top: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   aspect-ratio: 1242/2208;
   z-index: -1;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   opacity: 0.5;
+}
+.vote_sec h1 {
+  text-align: center;
+  position: relative;
+  top: -40px;
+}
+.vote_sec .godhand_img {
+  width: 80%;
+  margin: 0 auto;
 }
 .vote_sec .inner {
   position: relative;
@@ -44,7 +53,8 @@ a {
 }
 .vote_sec .meter_area {
   position: relative;
-  top: -100px;
+  top: -160px;
+  text-align: center;
 }
 .vote_sec #counter {
   text-align: center;
