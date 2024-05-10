@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function () {
         length: 0.9,
         strokeWidth: 0.035,
       },
-      colorStart: '#004AAD',
-      colorStop: '#004AAD',
+      colorStart: '#E75408',
+      colorStop: '#E75408',
       strokeColor: '#E0E0E0',
     };
     var target = document.getElementById('meter');
