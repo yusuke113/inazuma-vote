@@ -1,5 +1,21 @@
 'use strict';
 
+// ベーシック認証
+document.addEventListener('DOMContentLoaded', function () {
+  const username = 'admin';
+  const password = 'media';
+
+  // const userInput = prompt('Username:');
+  const passwordInput = prompt('Password:');
+
+  // if (userInput !== username || passwordInput !== password) {
+  if (passwordInput !== password) {
+    document.body.innerHTML = '<h1>Access Denied</h1>';
+  } else {
+    document.getElementById('access_overlay').classList.add('hidden');
+  }
+});
+
 const voteBtns = document.getElementsByClassName('vote_btn');
 const audio1 = document.getElementById('btn_audio1');
 const audio2 = document.getElementById('btn_audio2');
